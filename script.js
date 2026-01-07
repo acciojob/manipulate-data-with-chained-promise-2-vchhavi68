@@ -1,11 +1,8 @@
 //your JS code here. If required.function manipulateArray() {
   const output = document.getElementById("output");
 
+Promise.resolve([1, 2, 3, 4])
 
-  setTimeout(() => {
-    resolve([1, 2, 3, 4]);
-  }, 3000);
-})
   
   .then((arr) => {
     return new Promise((resolve) => {
@@ -17,17 +14,12 @@
     });
   })
 
-  
   .then((evens) => {
-    return new Promise(() => {
+    return new Promise((resolve) => {
       setTimeout(() => {
         const doubled = evens.map(num => num * 2);
         output.textContent = doubled.join(",");
+        resolve(doubled);
       }, 2000);
     });
   });
-
-  
-  
-
-
